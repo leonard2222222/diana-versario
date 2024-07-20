@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas con Navegación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page1">
+
+    <header>
+        <h1 id="headerText">Texto en la Parte Alta de la Página 1</h1>
+    </header>
+
+    <div class="content">
+        <img id="contentImage" src="https://via.placeholder.com/120x140" alt="Imagen 120x140">
+        <div id="contentText">
+            <p>Esta es la primera línea de texto de la página 1.</p>
+            <p>Esta es la segunda línea de texto de la página 1.</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="prevButton" class="disabled" onclick="navigate(-1)" disabled>Anterior</button>
+        <span id="pageNumber">1</span>
+        <button id="nextButton" onclick="navigate(1)">Adelante</button>
+    </div>
+
+    <div class="gif-container">
+        <img id="pageGif" src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif" alt="GIF animado">
+    </div>
+
+    <div class="edit-container">
+        <button id="editButton" onclick="showEditPanel()">Modificar</button>
+        <button id="addPageButton" onclick="addPage()">Agregar Página</button>
+    </div>
+
+    <!-- Panel de edición -->
+    <div id="editPanel" class="edit-panel">
+        <div class="edit-panel-content">
+            <span class="close-btn" onclick="closeEditPanel()">&times;</span>
+            <h2 id="editPanelTitle">Editar Página</h2>
+            <label for="editHeader">Título</label>
+            <input type="text" id="editHeader">
+            <br>
+            <label for="editImageFile">Imagen</label>
+            <input type="file" id="editImageFile" accept="image/*">
+            <br>
+            <label for="editText1">Texto Línea 1</label>
+            <input type="text" id="editText1">
+            <br>
+            <label for="editText2">Texto Línea 2</label>
+            <input type="text" id="editText2">
+            <br>
+            <label for="editGifFile">GIF</label>
+            <input type="file" id="editGifFile" accept="image/gif">
+            <br>
+            <button onclick="saveChanges()">Guardar Cambios</button>
+            <button class="reset-button" onclick="resetToDefaults()">Restablecer Predeterminado</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

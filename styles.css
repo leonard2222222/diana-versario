@@ -1,0 +1,252 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.page1 {
+    background: linear-gradient(to bottom, purple, black);
+}
+
+.page2 {
+    background: linear-gradient(to bottom, blue, lightblue);
+}
+
+.page3 {
+    background: linear-gradient(to bottom, green, lightgreen);
+}
+
+.page4 {
+    background: linear-gradient(to bottom, orange, yellow);
+}
+
+.page5 {
+    background: linear-gradient(to bottom, red, pink);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content img {
+    width: 120px;
+    height: 140px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin: 0;
+}
+
+.buttons {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 45%;
+}
+
+button.disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+button:hover:not(.disabled) {
+    background-color: #45a049;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .content img {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
+.gif-container {
+    margin-top: 20px;
+}
+
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.edit-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#editButton, #addPageButton {
+    padding: 10px 20px;
+    background-color: #2196F3; /* Color azul para el botón de modificar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#editButton:hover {
+    background-color: #0b79d0;
+}
+
+#addPageButton {
+    background-color: #ff5722; /* Color naranja para el botón de agregar página */
+    margin-left: 10px;
+}
+
+#addPageButton:hover {
+    background-color: #e64a19;
+}
+
+/* Estilo del panel de edición */
+.edit-panel {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.edit-panel.open {
+    display: flex; /* Mostrar el panel */
+}
+
+.edit-panel-content {
+    background: #333; /* Fondo negro */
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    max-height: 80vh;
+    color: #fff;
+}
+
+.edit-panel-content h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.edit-panel-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+.edit-panel-content input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-panel-content button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-panel-content button:hover {
+    background-color: #45a049;
+}
+
+.edit-panel-content .reset-button {
+    background-color: #f44336;
+}
+
+.edit-panel-content .reset-button:hover {
+    background-color: #d32f2f;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f44336; /* Color para el hover del botón de cerrar */
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .content {
+        margin: 0;
+    }
+
+    .edit-panel-content {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+    }
+
+    #editButton, #addPageButton {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
